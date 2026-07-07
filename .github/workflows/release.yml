@@ -11,15 +11,17 @@ permissions:
 
 jobs:
   publish:
-    name: Build and publish (${{ matrix.platform }})
+    name: Build and publish ${{ matrix.bundle-name }} (${{ matrix.platform }})
     strategy:
       fail-fast: false
       matrix:
         include:
           - platform: windows-latest
-            args: ""
+            bundle-name: Windows
+            args: "--bundles nsis msi"
           - platform: ubuntu-latest
-            args: ""
+            bundle-name: Linux
+            args: "--bundles deb rpm appimage"
 
     runs-on: ${{ matrix.platform }}
 
@@ -65,6 +67,14 @@ jobs:
           releaseName: Markdown Pad ${{ github.ref_name }}
           releaseBody: |
             Automated Markdown Pad release.
+
+            Installers:
+            - Windows: use the .exe setup file, or the .msi package.
+            - Fedora/RHEL-style Linux: use the .rpm package.
+            - Linux Mint/Debian/Ubuntu-style Linux: use the .deb package.
+            - Portable Linux: use the .AppImage package. AppImage is convenient, but it usually does not register file associations by itself.
+
+            The native Linux packages include desktop metadata. If .md files do not automatically open in Markdown Pad after installation, set Markdown Pad as the default app for Markdown files in your desktop environment, or run: xdg-mime default app.markdownpad.desktop.desktop text/markdown
 
             This project was made entirely by AI. Pull requests for fixes and new features are welcome.
           releaseDraft: true
