@@ -1,0 +1,28 @@
+{
+  "name": "markdown-pad",
+  "version": "0.1.0",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "test": "vitest run",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "tauri": "tauri",
+    "tauri:dev": "tauri dev",
+    "tauri:build": "tauri build"
+  },
+  "dependencies": {
+    "@milkdown/crepe": "^7.21.2",
+    "@tauri-apps/api": "^2.11.1",
+    "@tauri-apps/plugin-opener": "^2.5.0",
+    "lucide": "^1.23.0",
+    "marked": "^16.1.1"
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": "^2.11.4",
+    "typescript": "^5.9.2",
+    "vite": "^7.0.4",
+    "vitest": "^4.1.10"
+  }
+}
