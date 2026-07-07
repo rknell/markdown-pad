@@ -1,6 +1,6 @@
 [package]
 name = "markdown-pad"
-version = "0.1.0"
+version = "0.1.1"
 description = "A fast WYSIWYG Markdown editor for Windows."
 authors = ["Markdown Pad contributors"]
 license = "MIT"

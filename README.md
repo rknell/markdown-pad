@@ -53,8 +53,49 @@ Build release bundles:
 npm run tauri:build
 ```
 
+## Linux Installers
+
+GitHub releases build Linux packages alongside the Windows installers:
+
+- Fedora, RHEL, and similar systems: install the `.rpm` package.
+- Linux Mint, Debian, Ubuntu, and similar systems: install the `.deb` package.
+- Portable Linux use: run the `.AppImage`.
+
+The `.deb` and `.rpm` packages are the best choice when you want desktop
+integration and `.md` file association support. The AppImage is useful for quick
+portable testing, but it usually does not register file associations by itself.
+
+Example Fedora install:
+
+```sh
+sudo dnf install ./Markdown.Pad-0.1.1-1.x86_64.rpm
+```
+
+Example Linux Mint install:
+
+```sh
+sudo apt install ./Markdown.Pad_0.1.1_amd64.deb
+```
+
+If your desktop environment does not automatically make Markdown Pad the default
+Markdown editor, set it through the file properties UI, or try:
+
+```sh
+xdg-mime default app.markdownpad.desktop.desktop text/markdown
+```
+
+If that desktop ID is different on your distro, find it with:
+
+```sh
+grep -R "Markdown Pad" /usr/share/applications ~/.local/share/applications 2>/dev/null
+```
+
+Flatpak is not built yet. The current release path intentionally favors native
+RPM and Debian packages first because those are the simplest fit for Fedora and
+Linux Mint.
+
 ## Release
 
 GitHub Actions runs checks on pushes and pull requests. Tags that start with
-`v`, such as `v0.1.0`, run the release workflow and upload built Tauri bundles
+`v`, such as `v0.1.1`, run the release workflow and upload built Tauri bundles
 to a GitHub Release.
