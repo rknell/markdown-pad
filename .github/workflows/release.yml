@@ -77,6 +77,6 @@ jobs:
             The native Linux packages include desktop metadata. If .md files do not automatically open in Markdown Pad after installation, set Markdown Pad as the default app for Markdown files in your desktop environment, or run: xdg-mime default app.markdownpad.desktop.desktop text/markdown
 
             This project was made entirely by AI. Pull requests for fixes and new features are welcome.
-          releaseDraft: true
+          releaseDraft: false
           prerelease: false
           args: ${{ matrix.args }}
