@@ -68,14 +68,7 @@ declare global {
   }
 }
 
-const starterMarkdown = `# Untitled
-
-Start typing in **Markdown Pad**.
-
-- Use the toolbar or keyboard shortcuts.
-- Print with Ctrl+P.
-- Save as a real .md file.
-`;
+const starterMarkdown = "";
 
 const state: DocumentState = {
   path: null,
