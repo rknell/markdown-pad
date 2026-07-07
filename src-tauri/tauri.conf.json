@@ -28,7 +28,7 @@
   "bundle": {
     "active": true,
     "targets": "all",
-    "icon": ["icons/icon.ico"],
+    "icon": ["icons/icon.ico", "icons/icon.png"],
     "category": "Productivity",
     "shortDescription": "Fast WYSIWYG Markdown editor",
     "longDescription": "Markdown Pad is a fast WYSIWYG Markdown editor for Windows with clean printing.",
